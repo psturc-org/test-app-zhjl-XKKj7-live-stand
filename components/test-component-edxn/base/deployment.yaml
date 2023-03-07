@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: test-component-edxn
     spec:
       containers:
-      - image: quay.io/psturc/test-images:20e59af79206445e8d2a6787de2b883d
+      - image: quay.io/psturc/test-images@sha256:4e96d0cc9fe69aaff6935ce5975f6c500a8509f2d4bb6a9ae8b04fb93e345ee0
         name: my-python
         ports:
         - containerPort: 8081
