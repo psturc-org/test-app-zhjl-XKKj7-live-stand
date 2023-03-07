@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: test-component-edxn
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: test-component-edxn
+    app.kubernetes.io/part-of: test-app-zhjl
+  name: test-component-edxn
+  namespace: build-e2e-kowt-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+      app.kubernetes.io/instance: test-component-edxn
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: python-app
+        app.kubernetes.io/instance: test-component-edxn
+    spec:
+      containers:
+      - image: quay.io/psturc/test-images:20e59af79206445e8d2a6787de2b883d
+        name: my-python
+        ports:
+        - containerPort: 8081
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}
