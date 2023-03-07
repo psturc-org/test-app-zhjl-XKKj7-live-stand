@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: test-component-edxn
+  namespace: build-e2e-kowt-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/psturc/test-images@sha256:4e96d0cc9fe69aaff6935ce5975f6c500a8509f2d4bb6a9ae8b04fb93e345ee0
+        name: my-python
+        resources: {}
+status: {}
